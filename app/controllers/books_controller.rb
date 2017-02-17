@@ -5,7 +5,6 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @author = @book.author
   end
 
   def new
@@ -14,6 +13,14 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+
+    if @book.save
+      flash[:notice] = "Book added successfully"
+      redirect_to books_path
+    else
+      flash[:notice] = @book.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def edit
