@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <%= render 'layouts/topbar' %>
+    <% flash.each do |key, value| %>
+      <div class="flash text-center flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
