@@ -1,3 +1,9 @@
 <h1> Books! </h1>
 
-<%= link_to "Add a Book!", new_book_path %>
+<%= link_to "Add a Book!", new_book_path %><br>
+
+--------------------------<br>
+
+<% @books.each do |book| %>
+  <%= book.title %> by <%= book.author %>
+<% end %>
