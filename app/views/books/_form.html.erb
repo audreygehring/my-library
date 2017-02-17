@@ -1,0 +1,27 @@
+<div class="small-6 small-centered columns">
+  <%= form_for @book do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    </div>
+    <div class="field">
+       <%= f.label :description %><br>
+       <%= f.text_area :description %>
+    </div>
+    <div class="field">
+       <%= f.label :pages %><br>
+       <%= f.text_field :pages %>
+    </div>
+    <div class="field">
+       <%= f.label :publication_date %><br>
+       <%= f.text_field :publication_date %>
+    </div>
+    <div>
+      <%= f.submit "Submit Book", class: "hollow button" %>
+    </div>
+  <% end %>
+</div>
