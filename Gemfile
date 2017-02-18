@@ -2,6 +2,7 @@ source 'https://rubygems.org/'
 ruby '2.2.5'
 
 gem 'devise'
+gem 'foundation'
 gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
