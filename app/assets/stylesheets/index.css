@@ -1,3 +1,16 @@
+.flash {
+  background-color: #79B5AC;
+  color: white;
+  vertical-align: middle;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .top-bar {
 }
 

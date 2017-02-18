@@ -1,9 +1,13 @@
-<h1> Books! </h1>
+<div class="small-centered columns">
+  <br>
+  <h1> Books! </h1>
 
-<%= link_to "Add a Book!", new_book_path %><br>
+  <% @books.each do |book| %>
+  <strong><%= book.title %></strong> by <%= book.author %>
+  <%= link_to "Edit Book", edit_book_path(book) %><br>
+  <% end %>
+  <br>
+  <%= link_to "Add a Book!", new_book_path %><br>
+  <br>
 
---------------------------<br>
-
-<% @books.each do |book| %>
-  <%= book.title %> by <%= book.author %>
-<% end %>
+</div>

@@ -1,24 +1,25 @@
-<div class="small-6 small-centered columns">
+<div class="small-6 small-centered columns"><br>
+  <h1> Add a Book </h1>
   <%= form_for @book do |f| %>
     <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+      <% f.label :title %>
+      <%= f.text_field :title, placeholder: "Title" %>
     </div>
     <div class="field">
-      <%= f.label :author %>
-      <%= f.text_field :author %>
+      <% f.label :author %>
+      <%= f.text_field :author, placeholder: "Author" %>
     </div>
     <div class="field">
-       <%= f.label :description %><br>
-       <%= f.text_area :description %>
+       <% f.label :description %>
+       <%= f.text_area :description, placeholder: "Description" %>
     </div>
     <div class="field">
-       <%= f.label :pages %><br>
-       <%= f.text_field :pages %>
+       <% f.label :pages %>
+       <%= f.text_field :pages, placeholder: "Pages" %>
     </div>
     <div class="field">
-       <%= f.label :publication_date %><br>
-       <%= f.text_field :publication_date %>
+       <% f.label :publication_date %>
+       <%= f.text_field :publication_date, placeholder: "Publication Date" %>
     </div>
     <div>
       <%= f.submit "Submit Book", class: "hollow button" %>
