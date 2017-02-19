@@ -1,0 +1,6 @@
+<div class="small-6 small-centered columns" id="action-buttons"><br>
+  <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
+  <h2> <%= @user.email %> </h2><br>
+  <%= link_to "Edit Account", edit_user_registration_path(@user), class: "button hollow" %>
+  <%= link_to "Back", books_path, class: "button hollow" %>
+</div>

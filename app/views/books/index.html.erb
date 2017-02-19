@@ -2,7 +2,7 @@
   <br>
   <h1> Books! </h1>
 
-  <% @books.each do |book| %>
+  <% @books.order(:title).each do |book| %>
   <strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %><br>
   <% end %>
   <br>
