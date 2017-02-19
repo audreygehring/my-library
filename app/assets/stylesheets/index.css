@@ -1,5 +1,17 @@
+a#link {
+  color: white;
+}
+
+a#link:hover {
+  color: #012677;
+}
+
 #action-buttons {
   text-align: center;
+}
+
+.button_hollow {
+
 }
 
 .callout {
@@ -30,10 +42,12 @@ h3 {
 }
 
 .top-bar {
+  background-color: #005BC5;
 }
 
 .top-bar-left {
   text-align: left;
+  font-size: 24px;
 }
 
 .top-bar-right {

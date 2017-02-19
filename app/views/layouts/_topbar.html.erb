@@ -1,14 +1,14 @@
 <nav class="top-bar">
   <div class="top-bar-left">
-    <strong><%= link_to "MyLibrary", root_path %></strong>
+    <strong><%= link_to "MyLibrary", root_path, id: "link" %></strong>
   </div>
   <section class="top-bar-right">
     <% if current_user %>
-      <%= link_to current_user.email, user_path(current_user) %> |
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
+      <%= link_to current_user.email, user_path(current_user), id: "link" %> |
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "link"  %>
     <% else %>
-      <%= link_to 'Sign Up', new_user_registration_path %> |
-      <%= link_to 'Sign In', new_user_session_path %>
+      <%= link_to 'Sign Up', new_user_registration_path, id: "link" %> |
+      <%= link_to 'Sign In', new_user_session_path, id: "link" %>
     <% end %>
   </section>
 </nav>
