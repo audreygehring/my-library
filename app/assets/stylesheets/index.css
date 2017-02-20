@@ -18,6 +18,10 @@ a#link:hover {
   border: none;
 }
 
+.callout#show {
+  
+}
+
 .flash {
   background-color: #79B5AC;
   color: white;
