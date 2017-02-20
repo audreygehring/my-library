@@ -1,14 +1,17 @@
-<div class="small-centered columns" id="bookshow">
-  <br>
-  <h1> <%= @book.title %> </h1>
-  <h2><%= @book.author %></h2><br>
-  <h3><%= @book.description %></h3>
-  <h3><%= @book.pages %> Pages | Publication Date: <%= @book.publication_date %></h3>
-
-  <%= link_to "Edit Book", edit_book_path(@book) %> |
-  <%= link_to "Delete Book", book_path(@book), method: :delete %> |
-
-  <%= link_to "Back", books_path %><br>
-  <br>
-
+<div class="callout large">
+  <div class="small-5 columns" id="bookshow">
+    <br>
+    <h1 id="show-page"> <%= @book.title %> </h1>
+    <h2 id="show-page"><%= @book.author %></h2><br>
+  </div>
+  <div class="small-7 columns">
+    <h3 id="show-page"><%= @book.description %></h3>
+    <h3><%= @book.pages %> Pages | Published: <%= @book.publication_date %></h3>
+    <br>
+    <div id="action-buttons">
+      <%= link_to "Edit Book", edit_book_path(@book), class: "button hollow" %>
+      <%= link_to "Delete Book", book_path(@book), method: :delete, class: "button hollow" %>
+      <%= link_to "Back", books_path, class: "button hollow" %><br>
+    </div>
+  </div>
 </div>
