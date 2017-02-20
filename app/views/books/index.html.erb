@@ -1,12 +1,14 @@
 <div class="small-centered columns">
   <br>
-  <h1> Books! </h1>
+  <h1> My Books </h1>
 
   <% @books.order(:title).each do |book| %>
   <strong><%= link_to book.title, book_path(book) %></strong> by <%= book.author %><br>
   <% end %>
   <br>
-  <%= link_to "Add a Book!", new_book_path %><br>
+  <div id="action-buttons">
+    <%= link_to "Add a Book", new_book_path, class: "button hollow" %><br>
+  </div>
   <br>
 
 </div>
