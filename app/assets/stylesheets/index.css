@@ -31,14 +31,29 @@ h1 {
   font-weight: bold;
 }
 
+h1#show-page {
+  font-size: 22px;
+  text-align: right;
+}
+
 h2 {
   font-size: 22px;
   text-align: center;
 }
 
+h2#show-page {
+  font-size: 20px;
+  text-align: right;
+}
+
 h3 {
   font-size: 18px;
   text-align: center;
+}
+
+h3#show-page {
+  font-size: 18px;
+  text-align: left;
 }
 
 .top-bar {
@@ -52,4 +67,5 @@ h3 {
 
 .top-bar-right {
   text-align: right;
+  margin-top: 7px;
 }
