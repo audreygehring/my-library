@@ -15,6 +15,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @author = Author.new(author_params)
 
     if @book.save
       flash[:notice] = "Book added successfully"
