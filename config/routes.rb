@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :books do
-    resources :author
-  end
+  resources :books
+
+  resources :authors
 end
