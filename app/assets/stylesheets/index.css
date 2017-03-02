@@ -60,6 +60,17 @@ h3#show-page {
   text-align: left;
 }
 
+.home_button {
+  position: absolute;
+}
+
+#img_container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border: 20px solid white;
+}
+
 .top-bar {
   background-color: #C74066;
 }
