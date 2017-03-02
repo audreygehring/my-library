@@ -4,7 +4,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @author = Author.find(params[:id])
   end
 
   def new
@@ -20,6 +20,14 @@ class AuthorsController < ApplicationController
   end
 
   def update
+    @author = Author.find(params[:id])
+    if @author.update(author_params)
+      flash[:notice] = "Author updated successfully!"
+      redirect_to @author
+    else
+      flash[:notice] = @author.errors.full_messages.to_sentence
+      render :edit
+    end
   end
 
   def destroy
