@@ -6,8 +6,10 @@
       <%= f.text_field :title, placeholder: "Title" %>
     </div>
     <div class="field">
-      <% f.label :author %>
-      <%= f.text_field :author, placeholder: "Author" %>
+      <%= f.fields_for :author do |o| %>
+        <%= o.text_field :first_name, placeholder: "Author First Name" %>
+        <%= o.text_field :last_name, placeholder: "Author Last Name" %>
+      <% end %>
     </div>
     <div class="field">
        <% f.label :description %>

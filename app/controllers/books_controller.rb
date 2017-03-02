@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @author = Author.all
   end
 
   def show
@@ -11,6 +12,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.build_author
   end
 
   def create
@@ -54,6 +56,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :publication_date, :description, :pages)
+    params.require(:book).permit(:title, :publication_date, :description, :pages, author_attributes: [:each, :author, :attribute])
   end
 end

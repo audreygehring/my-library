@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  has_one :author
+  accepts_nested_attributes_for :author
 
   validates :title, presence: true
   validates :author, presence: true
