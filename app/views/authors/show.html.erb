@@ -1,0 +1,14 @@
+<div class="callout large">
+  <div class="small-5 columns" id="authorshow">
+    <br>
+    <h1 id="show-page"> <%= @author.first_name %> <%= @author.last_name %> </h1>
+  </div>
+  <div class="small-7 columns">
+    <h3 id="show-page"><%= @author.description %></h3>
+    <br>
+    <div id="action-buttons">
+      <%= link_to "Edit Author", edit_author_path(@author), class: "button hollow" %>
+      <%= link_to "Back", books_path, class: "button hollow" %><br>
+    </div>
+  </div>
+</div>

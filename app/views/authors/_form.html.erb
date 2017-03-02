@@ -1,0 +1,24 @@
+<div class="small-6 small-centered columns"><br>
+  <h1> Edit Author </h1>
+  <%= form_for @author do |f| %>
+    <div class="field">
+      <% f.label :first_name %>
+      <%= f.text_field :first_name, placeholder: "Author First Name" %>
+    </div>
+    <div class="field">
+      <% f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Author Last Name" %>
+    </div>
+    <div class="field">
+      <% f.label :description %>
+      <%= f.text_area :description, placeholder: "Author Description" %>
+    </div>
+    <div>
+      <%= f.submit "Update Author", class: "hollow button" %>
+    </div>
+
+  <% end %>
+  <div>
+    <%= link_to "Back", books_path, class: "hollow button" %>
+  </div>
+</div>
