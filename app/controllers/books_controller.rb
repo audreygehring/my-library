@@ -31,7 +31,7 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if @book.udate(book_params)
+    if @book.update(book_params)
       flash[:notice] = "Book updated successfully!"
       redirect_to @dish
     else
