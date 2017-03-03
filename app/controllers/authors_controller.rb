@@ -8,7 +8,7 @@ class AuthorsController < ApplicationController
   end
 
   def new
-    @author = Author.new
+    @author = Author.find_or_create_by(author_params)
   end
 
   def create
