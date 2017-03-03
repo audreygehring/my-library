@@ -2,7 +2,7 @@
   <div class="small-5 columns" id="bookshow">
     <br>
     <h1 id="show-page"> <%= @book.title %> </h1>
-    <h2 id="show-page"><%= @author.first_name %> <%= @author.last_name %></h2><br>
+    <h2 id="show-page"><%= link_to "#{@author.first_name} #{@author.last_name}", author_path(@author) %></h2><br>
   </div>
   <div class="small-7 columns">
     <h3 id="show-page"><%= @book.description %></h3>
