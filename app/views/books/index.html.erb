@@ -3,8 +3,8 @@
   <h1> My Books </h1>
 
   <% @books.order(:title).each do |book| %>
-  <% author = Author.find(book.author_id) %>
-  <strong><%= link_to book.title, book_path(book) %></strong> by <%= link_to "#{author.first_name} #{author.last_name}", author_path(author) %><br>
+    <% author = Author.find(book.author_id) %>
+    <strong><%= link_to book.title, book_path(book) %></strong> by <%= link_to "#{author.first_name} #{author.last_name}", author_path(author) %><br>
   <% end %>
   <br>
   <div id="action-buttons">

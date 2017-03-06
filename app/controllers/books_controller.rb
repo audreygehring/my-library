@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @books = Book.all
+    @user = current_user
+    @books = Book.where(user_id: @user)
     @author = Author.all
   end
 
@@ -13,6 +14,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    # conditional here
     @book.build_author
   end
 
