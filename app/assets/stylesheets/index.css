@@ -14,8 +14,8 @@ a#link:hover {
 
 }
 
-.callout#book-index {
-  border: black;
+.callout {
+  border: none;
 }
 
 .flash {
