@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :author, dependent: :destroy
+  belongs_to :user
   accepts_nested_attributes_for :author
 
   validates :title, presence: true
