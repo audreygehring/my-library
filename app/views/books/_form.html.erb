@@ -1,6 +1,7 @@
 <div class="small-6 small-centered columns"><br>
   <h1> Add a Book </h1>
   <%= form_for @book do |f| %>
+    <% f.hidden_field :user_id %>
     <div class="field">
       <% f.label :title %>
       <%= f.text_field :title, placeholder: "Title" %>

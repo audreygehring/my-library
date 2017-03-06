@@ -2,8 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = current_user
-    @books = Book.where(user_id: @user)
+    @books = Book.where(user_id: current_user)
     @author = Author.all
   end
 
@@ -14,12 +13,16 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    # conditional here
-    @book.build_author
+    if Author.where(first_name: :first_name, last_name: :last_name) == []
+      @book.build_author
+    else
+      @book.author == Author.where(first_name: :first_name, last_name: :last_name)
+    end
   end
 
   def create
     @book = Book.new(book_params)
+    @book.user_id = current_user.id
 
     if @book.save
       flash[:notice] = "Book added successfully"
@@ -59,6 +62,17 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :publication_date, :description, :pages, author_attributes: [:first_name, :last_name, :description])
+    params.require(:book).permit(
+      :title,
+      :publication_date,
+      :description,
+      :pages,
+      :user,
+      author_attributes: [
+          :first_name,
+          :last_name,
+          :description
+      ]
+    )
   end
 end
