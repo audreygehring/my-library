@@ -13,16 +13,19 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    if Author.where(first_name: :first_name, last_name: :last_name) == []
-      @book.build_author
-    else
-      @book.author == Author.where(first_name: :first_name, last_name: :last_name)
-    end
+    @book.build_author
   end
 
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
+
+    if Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name) == []
+      @book.build_author
+    else
+      @book.author == Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name)
+    end
+
 
     if @book.save
       flash[:notice] = "Book added successfully"
