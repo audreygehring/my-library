@@ -27,11 +27,13 @@ class BooksController < ApplicationController
     else
       @author = Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name)
       @book.author_id = @author[0].id
-      binding.pry
     end
 
     if @book.save
-      @book.author = @author.id
+      binding.pry
+      if @book.author == nil
+        @book.author = @author.id
+      end
       flash[:notice] = "Book added successfully"
       redirect_to books_path
     else
