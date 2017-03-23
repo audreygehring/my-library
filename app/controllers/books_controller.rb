@@ -21,11 +21,14 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
 
     if Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name) == []
+      # @book.build_author
       author = Author.new(first_name: book_params[:author_attributes][:first_name], last_name: book_params[:author_attributes][:last_name], book_id: @book.id)
       @book.author = author.id
+      @book.save
       binding.pry
     else
-      @book.author = Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name)
+      @author = Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name)
+      @book.author_id = @author[0].id
       binding.pry
     end
 
