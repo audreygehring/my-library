@@ -22,7 +22,6 @@ class BooksController < ApplicationController
 
     if Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name) == []
       @author = Author.new(book_params[:author_attributes])
-      # author = Author.new(first_name: book_params[:author_attributes][:first_name], last_name: book_params[:author_attributes][:last_name])
       binding.pry
     else
       @author = Author.where(first_name: @book.author.first_name, last_name: @book.author.last_name)
