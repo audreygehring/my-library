@@ -56,6 +56,13 @@ h3#show-page {
   text-align: left;
 }
 
+h5 {
+  font-size: 18px;
+  font-style: italic;
+  color: grey;
+  text-align: center;
+}
+
 .home_button {
   position: absolute;
 }

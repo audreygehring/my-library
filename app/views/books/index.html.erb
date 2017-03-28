@@ -2,6 +2,10 @@
   <br>
   <h1> My Books </h1>
 
+
+<% if @books.empty? %>
+  <h5><%= "You haven't added any books yet!" %><h5>
+<% end %>
   <% @books.order(:title).each do |book| %>
     <% author = Author.find(book.author_id) %>
     <strong><%= link_to book.title, book_path(book) %></strong> by <%= link_to "#{author.first_name} #{author.last_name}", author_path(author) %><br>
