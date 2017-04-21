@@ -81,11 +81,4 @@ class BooksController < ApplicationController
       ]
     )
   end
-  # def author_params
-  #   params.require(:author).permit(
-  #     :first_name,
-  #     :last_name,
-  #     :description
-  #   )
-  # end
 end

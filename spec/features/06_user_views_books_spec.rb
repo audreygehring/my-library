@@ -44,7 +44,8 @@ feature "user views list of books", %{
     click_link "Add a Book"
 
     fill_in "Title", with: "Harry Potter and the Prisoner of Azkaban"
-    fill_in "Author", with: "J.K. Rowling"
+    fill_in "Author First Name", with: "J.K."
+    fill_in "Author Last Name", with: "Rowling"
     fill_in "Description", with: "Harry and friends embark on another adventure."
     fill_in "Pages", with: 450
     fill_in "Publication Date", with: "June 10, 2000"
