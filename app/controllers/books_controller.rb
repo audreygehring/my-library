@@ -9,6 +9,8 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @author = @book.author
+
+    @goodreads_data = goodreads_call(@book)
   end
 
   def new
@@ -80,5 +82,13 @@ class BooksController < ApplicationController
           :description
       ]
     )
+  end
+
+  def goodreads_call(book)
+    goodreads_api = ENV["GOODREADS_API_KEY"]
+    uri = URI("https://www.goodreads.com/search/index.xml?key=#{goodreads_api}&q=#{book.title}")
+    book_response = Net::HTTP.get_response(uri)
+    book_info = book_response.body
+    binding.pry
   end
 end
