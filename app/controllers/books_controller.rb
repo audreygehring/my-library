@@ -4,12 +4,13 @@ class BooksController < ApplicationController
   def index
     @books = Book.where(user_id: current_user)
     @author = Author.all
+    @user = current_user
   end
 
   def show
     @book = Book.find(params[:id])
     @author = @book.author
-
+    @user = current_user
     @goodreads_data = goodreads_call(@book)
   end
 
