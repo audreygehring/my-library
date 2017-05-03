@@ -1,24 +1,11 @@
-# README
+# MyLibrary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# About
 
-Things you may want to cover:
+MyLibrary is a handy virtual bookshelf app to keep track of your own library.
 
-* Ruby version
+# Basics
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby on Rails back-end with PostgreSQL database
+* Goodreads API integration
+* User authentication with Devise
