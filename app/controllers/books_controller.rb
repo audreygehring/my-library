@@ -87,9 +87,11 @@ class BooksController < ApplicationController
 
   def goodreads_call(book)
     goodreads_api = ENV["GOODREADS_API_KEY"]
-    uri = URI("https://www.goodreads.com/search/index.xml?key=#{goodreads_api}&q=#{book.title}")
-    book_response = Net::HTTP.get_response(uri)
-    book_info = book_response.body
+    uri = HTTParty.get("https://www.goodreads.com/book/title?key=#{goodreads_api}&title=#{book.title}&format=json")
+    # book_response = Net::HTTP.get_response(uri)
+    # book_info = JSON.parse(book_response.body)
+    # book_info = Nokogiri::XML(book_response.body)
+    # parsed = book_info.at_xpath('//parsed')
     binding.pry
   end
 end
