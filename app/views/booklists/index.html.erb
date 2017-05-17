@@ -1,0 +1,18 @@
+<div class="small-centered columns">
+  <br>
+  <h1> My Booklists </h1>
+
+<% if @booklists.empty? %>
+  <h5><%= "You haven't added any booklists yet!" %><h5>
+<% end %>
+  <% @booklists.order(:created_at).each do |booklist| %>
+    <strong><%= link_to booklist.title, booklist_path(booklist) %></strong> <i><%= @booklist.length %> books)</i>
+  <% end %>
+  <br>
+  <div id="action-buttons">
+    <%= link_to "Add a Booklist", new_booklist_path, class: "button hollow" %>
+    <%= link_to "See my Books", books_path, class: "button hollow" %>
+    <%= link_to "Back", root_path, class: "button hollow" %><br>
+  </div>
+  <br>
+</div>

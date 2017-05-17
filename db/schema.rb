@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516224453) do
+ActiveRecord::Schema.define(version: 20170517004007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "book_id",     null: false
+    t.integer  "booklist_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["book_id"], name: "index_assignments_on_book_id", using: :btree
+    t.index ["booklist_id"], name: "index_assignments_on_booklist_id", using: :btree
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string  "first_name",  null: false
@@ -24,9 +33,11 @@ ActiveRecord::Schema.define(version: 20170516224453) do
   end
 
   create_table "booklists", force: :cascade do |t|
-    t.string  "booklist_title", null: false
-    t.integer "user_id",        null: false
-    t.text    "description"
+    t.string   "booklist_title", null: false
+    t.integer  "user_id",        null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["user_id"], name: "index_booklists_on_user_id", using: :btree
   end
 
@@ -37,9 +48,7 @@ ActiveRecord::Schema.define(version: 20170516224453) do
     t.integer "pages",            null: false
     t.integer "author_id"
     t.integer "user_id"
-    t.integer "book_list_id"
     t.index ["author_id"], name: "index_books_on_author_id", using: :btree
-    t.index ["book_list_id"], name: "index_books_on_book_list_id", using: :btree
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
