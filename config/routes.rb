@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :books
   resources :authors
-  resources :booklists
+  resources :booklists do
+    resources :books
+  end
 end

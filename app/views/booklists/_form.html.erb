@@ -1,0 +1,23 @@
+<div class="small-6 small-centered columns"><br>
+  <h1> Add a Booklist </h1>
+  <%= form_for @booklist do |f| %>
+    <% f.hidden_field :user_id %>
+    <div class="field">
+      <% f.label :booklist_title %>
+      <%= f.text_field :booklist_title, placeholder: "Booklist Title" %>
+    </div>
+    <div class="field">
+       <% f.label :description %>
+       <%= f.text_area :description, placeholder: "Description" %>
+    </div>
+    <div class="field">
+
+    </div>
+    <div>
+      <%= f.submit "Submit Booklist", class: "hollow button" %>
+    </div>
+  <% end %>
+  <div>
+    <%= link_to "Back", booklists_path, class: "hollow button" %>
+  </div>
+</div>
